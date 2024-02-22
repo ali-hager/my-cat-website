@@ -1,11 +1,13 @@
 import { Button } from "@mui/material";
 import './RandomPic.css'
 
-function RandomPic({ imgUrl, refetchFunction }) {
+function RandomPic({ imgUrl, refetchFunction, addToFavorites }) {
   return (
     <>
-    {/* 2. re-fetch the cat pic without refreshing the browser */}
-      <Button onClick={refetchFunction} variant="outlined">New Cat</Button>
+    {/* 4. add a "favorite cats" list */}
+      <Button onClick={refetchFunction} variant="outlined" color="success" >New Cat</Button>
+          {/* 2. re-fetch the cat pic without refreshing the browser */}
+      <Button onClick={()=> addToFavorites(imgUrl)} variant="outlined" color="success">Add Favorite</Button>
       <br></br> <br></br>
       {/* 1. fetch a random cat pic from the API and display it
       
